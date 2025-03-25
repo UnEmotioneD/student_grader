@@ -2,6 +2,8 @@
 
 ## What it does
 
+- From Arch Linux
+
 - Reads students information (name, number, scores)
 - Calculate total, average scores for each
 - Grade them from A to F
