@@ -1,0 +1,9 @@
+{
+  "watch": ["src"],
+  "ext": "cpp",
+  "ignore": [],
+  "exec": "g++ ./src/main.cpp -o ./build/main.exe && ./build/main.exe",
+  "events": {
+    "start": "clear"
+  }
+}
