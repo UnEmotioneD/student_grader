@@ -22,13 +22,13 @@ int main() {
     Student student;
 
     // read file
-    ifstream theFile;
-    theFile.open("./student_scores.txt");
+    ifstream stdFile;
+    stdFile.open("./student_scores.txt");
 
-    string studentScores = "";
-
-    while (getline(theFile, studentScores)) {
-        cout << studentScores << endl;
+    // assign contents of file to string variable
+    string stdInfo = "";
+    while (getline(stdFile, stdInfo)) {
+        cout << stdInfo << endl;
     }
 
     return 0;
