@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <list>
+#include <sstream>
 #include <string>
 
 using namespace std;
@@ -13,42 +14,49 @@ class Student {
     int kor;
     int eng;
     int math;
-    int total;
+    int tot;
     float avg;
     char grade;
     int rank;
 };
 
-// tokenize each line and assign its values according to Student class
-void assignInfo(string studentInfo) {
-    cout << "from assinInfo()" << endl;
-    cout << studentInfo << endl;
-}
-
 int main() {
-    Student student;
-
     // read file
     ifstream stdFile;
     stdFile.open("./student_scores.txt");
 
-    list<Student> studentList;
+    list<Student> stdList;
+
+    Student student;
 
     // assign contents of file to string variable
     string stdInfo = "";
     int studentCnt = 0;
 
     while (getline(stdFile, stdInfo)) {
-        assignInfo(stdInfo);
-        student.name = stdInfo;
-        studentList.push_back(student);
+        int kor = 0;
+        int eng = 0;
+        int math = 0;
+
+        istringstream iss(stdInfo);
+        iss >> student.no >> student.name >> kor >> eng >> math;
+
+        student.kor = kor;
+        student.eng = eng;
+        student.math = math;
+        student.tot = kor + eng + math;
+        float tot = static_cast<float>(student.tot);
+        student.avg = tot / 3;
+
+        stdList.push_back(student);
+
         studentCnt++;
     }
 
     cout << endl << "Number of students: " << studentCnt << endl;
 
-    for (auto s : studentList) {
-        cout << s.name << endl;
+    for (auto s : stdList) {
+        cout << s.avg << endl;
     }
 
     return 0;
