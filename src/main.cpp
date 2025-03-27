@@ -19,6 +19,12 @@ class Student {
     int rank;
 };
 
+// tokenize each line and assign its values according to Student class
+void assignInfo(string studentInfo) {
+    cout << "from assinInfo()" << endl;
+    cout << studentInfo << endl;
+}
+
 int main() {
     Student student;
 
@@ -31,8 +37,9 @@ int main() {
     // assign contents of file to string variable
     string stdInfo = "";
     int studentCnt = 0;
+
     while (getline(stdFile, stdInfo)) {
-        cout << stdInfo << endl;
+        assignInfo(stdInfo);
         student.name = stdInfo;
         studentList.push_back(student);
         studentCnt++;
