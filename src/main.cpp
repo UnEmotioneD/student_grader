@@ -25,9 +25,8 @@ int main() {
     ifstream stdFile;
     stdFile.open("./student_scores.txt");
 
-    list<Student> stdList;
-
     Student student;
+    list<Student> stdList;
 
     // assign contents of file to string variable
     string stdInfo = "";
@@ -48,6 +47,7 @@ int main() {
 
         stdList.push_back(student);
     }
+    stdFile.close();
 
     for (auto s : stdList) {
         cout << s.avg << endl;
