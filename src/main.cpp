@@ -31,8 +31,6 @@ int main() {
 
     // assign contents of file to string variable
     string stdInfo = "";
-    int studentCnt = 0;
-
     while (getline(stdFile, stdInfo)) {
         int kor = 0;
         int eng = 0;
@@ -49,11 +47,7 @@ int main() {
         student.avg = tot / 3;
 
         stdList.push_back(student);
-
-        studentCnt++;
     }
-
-    cout << endl << "Number of students: " << studentCnt << endl;
 
     for (auto s : stdList) {
         cout << s.avg << endl;
