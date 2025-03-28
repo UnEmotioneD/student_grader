@@ -1,3 +1,5 @@
+// Copyright (c) 2025 UnEmotioneD
+
 #include <cstdio>
 #include <fstream>
 #include <iostream>
@@ -5,10 +7,15 @@
 #include <sstream>
 #include <string>
 
-using namespace std;
+using std::cout;
+using std::endl;
+using std::ifstream;
+using std::istringstream;
+using std::list;
+using std::string;
 
 class Student {
-  public:
+ public:
     int no;
     string name;
     int kor;
