@@ -42,15 +42,14 @@ int main() {
         student.eng = eng;
         student.math = math;
         student.tot = kor + eng + math;
-        float tot = static_cast<float>(student.tot);
-        student.avg = tot / 3;
+        student.avg = static_cast<float>(student.tot) / 3;
 
         stdList.push_back(student);
     }
     stdFile.close();
 
     for (auto s : stdList) {
-        cout << s.avg << endl;
+        cout << s.name << " - average score: " << s.avg << endl;
     }
 
     return 0;
