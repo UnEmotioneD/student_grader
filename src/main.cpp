@@ -1,6 +1,5 @@
 // Copyright (c) 2025 UnEmotioneD
 
-#include <cstdio>
 #include <fstream>
 #include <iostream>
 #include <list>
