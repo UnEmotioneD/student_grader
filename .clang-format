@@ -1,5 +1,18 @@
-BasedOnStyle: LLVM
-IndentWidth: 4
-TabWidth: 4
+BasedOnStyle: Google
+
+# Match cpplint defaults
+IndentWidth: 2
+TabWidth: 2
 UseTab: Never
 AccessModifierOffset: -3
+ColumnLimit: 80
+CommentSpacing: 2
+
+# Optional: match cpplint include behavior
+SortIncludes: true
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: "^<.*>"
+    Priority: 1
+  - Regex: '^".*"'
+    Priority: 2
