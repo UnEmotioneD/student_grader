@@ -6,8 +6,6 @@
 #include <sstream>
 #include <string>
 
-#include "../include/Student.h"
-
 using std::cout;
 using std::endl;
 using std::ifstream;
@@ -15,15 +13,29 @@ using std::istringstream;
 using std::list;
 using std::string;
 
+class Student {
+ public:
+    int no;
+    string name;
+    int kor;
+    int eng;
+    int math;
+    int tot;
+    float avg;
+    char grade;
+    int rank;
+};
+
 int main() {
-    // read file
+    // Read file
     ifstream stdFile;
     stdFile.open("./student_scores.txt");
 
+    // Create student class
     Student student;
     list<Student> stdList;
 
-    // assign contents of file to string variable
+    // Assign contents of file to string variable
     string stdInfo = "";
     while (getline(stdFile, stdInfo)) {
         int kor = 0;
